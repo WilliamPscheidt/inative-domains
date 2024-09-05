@@ -33,9 +33,8 @@ verificar_dominios_pasta() {
     for arquivo in "$DIRETORIO_DOMINIOS"/*.db; do
         # Extrai o nome do domínio removendo o sufixo ".db"
         dominio=$(basename "$arquivo" .db)
-        verificar_nameservers $dominio &  # Executa em segundo plano
+        verificar_nameservers $dominio
     done
-    wait  # Aguarda todas as tarefas em segundo plano concluírem
 }
 
 # Verifica se a pasta existe
